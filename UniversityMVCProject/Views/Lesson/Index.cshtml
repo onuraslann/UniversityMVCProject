@@ -13,20 +13,24 @@
             <th>StudentId</th>
             <th>Credit</th>
             <th>LecturerId</th>
+            <th>Update</th>
+            <th>Delete</th>
           
         </tr>
     </thead>
     <tbody>
         @foreach (var lessons in Model)
         {
-            <tr>
-                <td>@lessons.Id</td>
-                <td>@lessons.LessonName</td>
-                <td>@lessons.Students.FirstName </td>
-                <td>@lessons.Credit</td>
-                <td>@lessons.Lecturers.FirstName</td>
-                
-            </tr>
+        <tr>
+            <td>@lessons.Id</td>
+            <td>@lessons.LessonName</td>
+            <td>@lessons.Students.FirstName </td>
+            <td>@lessons.Credit</td>
+            <td>@lessons.Lecturers.FirstName</td>
+            <td><a class="btn btn-primary" href="/Lesson/Update/@lessons.Id">Update</a></td>
+            <td><a class="btn btn-warning" href="/Lesson/Delete/@lessons.Id">Delete</a></td>
+
+        </tr>
 
         }
     </tbody>

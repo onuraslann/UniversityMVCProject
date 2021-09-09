@@ -13,17 +13,24 @@
             <th>DepartmanName</th>
             <th>Address</th>
             <th>Telephone</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var departman in Model)
         {
-            <tr>
-                <td>@departman.Id</td>
-                <td>@departman.DepartmanName</td>
-                <td>@departman.Address</td>
-                <td>@departman.Telephone</td>
-            </tr>
+        <tr>
+            <td>@departman.Id</td>
+            <td>@departman.DepartmanName</td>
+            <td>@departman.Address</td>
+            <td>@departman.Telephone</td>
+            <td><a class="btn btn-primary" href="/Departman/Update/@departman.Id">Update</a></td>
+            <td><a class="btn btn-warning" href="/Departman/Delete/@departman.Id">Delete</a></td>
+
+
+
+        </tr>
         }
     </tbody>
 </table>

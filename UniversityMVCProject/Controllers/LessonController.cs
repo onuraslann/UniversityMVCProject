@@ -31,8 +31,34 @@ namespace UniversityMVCProject.Controllers
             {
                 db.Lessons.Add(lessons);
             }
+            else
+            {
+                var updatedEntity = db.Entry(lessons);
+                updatedEntity.State = System.Data.Entity.EntityState.Modified;
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult Update(int id)
+        {
+            var model = new LessonViewModels()
+            {
+                Lecturers = db.Lecturers.ToList(),
+                Students = db.Students.ToList(),
+                Lessons = db.Lessons.Find(id)
+            };
+            return View("Yeni", model);
+        }
+        public ActionResult Delete(int id)
+        {
+            var deletedEntity = db.Lessons.Find(id);
+            if (deletedEntity == null)
+            {
+                return HttpNotFound();
+            }
+            db.Lessons.Remove(deletedEntity);
+            db.SaveChanges();
+            return View("Index");
         }
     }
 }

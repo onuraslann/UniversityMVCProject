@@ -13,6 +13,8 @@
               <th>Email</th>
               <th>Age</th>
               <th>DepartmanId</th>
+              <th>Update</th>
+              <th>Delete</th>
           </tr>
       </thead>
       <tbody>
@@ -25,6 +27,8 @@
               <td>@lecturer.Email</td>
               <td>@lecturer.Age</td>
               <td>@lecturer.Departmans.DepartmanName</td>
+              <td><a class="btn btn-primary" href="/Lecturer/Update/@lecturer.Id">Update</a></td>
+              <td><a class="btn btn-warning" href="/Lecturer/Delete/@lecturer.Id">Delete</a></td>
           </tr>
 
           }

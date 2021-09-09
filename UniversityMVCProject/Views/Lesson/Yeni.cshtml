@@ -29,6 +29,7 @@
         @Html.DropDownListFor(m => m.Lessons.LecturerId, new SelectList(Model.Lecturers, "Id", "FirstName"))
 
     </div>
+    @Html.HiddenFor(m=>m.Lessons.Id)
     <button type="submit" class="btn btn-success">Add</button>
 }
 

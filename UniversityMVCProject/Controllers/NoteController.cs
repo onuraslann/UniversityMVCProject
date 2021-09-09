@@ -31,6 +31,35 @@ namespace UniversityMVCProject.Controllers
             {
                 db.Notes.Add(notes);
             }
+            else
+            {
+                var updatedEntity = db.Entry(notes);
+                updatedEntity.State = System.Data.Entity.EntityState.Modified;
+
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult  Update(int id)
+        {
+            var model = new NoteViewModels()
+            {
+                Lessons = db.Lessons.ToList(),
+                Students = db.Students.ToList(),
+                Notes = db.Notes.Find(id)
+            };
+            return View("Yeni", model);
+
+        }
+        public ActionResult Delete(int id)
+        {
+            var deletedEntity = db.Notes.Find(id);
+
+            if (deletedEntity==null)
+            {
+                return HttpNotFound();
+            }
+            db.Notes.Remove(deletedEntity);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

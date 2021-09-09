@@ -26,8 +26,35 @@ namespace UniversityMVCProject.Controllers
             {
                 db.Departmans.Add(departmans);
             }
+            else
+            {
+                var updatedEntity = db.Entry(departmans);
+                updatedEntity.State = System.Data.Entity.EntityState.Modified;
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult Delete(int id)
+        {
+            var deletedEntity = db.Departmans.Find(id);
+            if (deletedEntity == null)
+            {
+                return HttpNotFound();
+            }
+            db.Departmans.Remove(deletedEntity);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Update( int id)
+        {
+            var updatedDepartman = db.Departmans.Find(id);
+            if (updatedDepartman == null)
+            {
+                return HttpNotFound();
+            }
+            db.SaveChanges();
+            return View("Yeni",updatedDepartman);
         }
     }
 }

@@ -39,6 +39,7 @@
         @Html.TextBoxFor(m => m.Notes.Status)
 
     </div>
+    @Html.HiddenFor(m=>m.Notes.Id)
     <button type="submit" class="btn btn-success">Add</button>
 }
 

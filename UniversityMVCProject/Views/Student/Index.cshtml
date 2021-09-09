@@ -14,19 +14,23 @@
             <th>StudentNo</th>
             <th>Age</th>
             <th>DepartmanId</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var student in Model)
         {
-            <tr>
-                <td>@student.Id</td>
-                <td>@student.FirstName</td>
-                <td>@student.LastName</td>
-                <td>@student.StudentNo</td>
-                <td>@student.Age</td>
-                <td>@student.Departmans.DepartmanName</td>
-            </tr>
+        <tr>
+            <td>@student.Id</td>
+            <td>@student.FirstName</td>
+            <td>@student.LastName</td>
+            <td>@student.StudentNo</td>
+            <td>@student.Age</td>
+            <td>@student.Departmans.DepartmanName</td>
+            <td><a class="btn btn-primary" href="/Student/Update/@student.Id">Update</a></td>
+            <td><a class="btn btn-warning" href="/Student/Delete/@student.Id">Delete</a></td>
+        </tr>
 
         }
     </tbody>
