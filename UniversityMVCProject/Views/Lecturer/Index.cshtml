@@ -1,0 +1,32 @@
+﻿@model List<UniversityMVCProject.Models.EntityFramework.Lecturers>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a class="btn btn-success" href="/Lecturer/Yeni">NewLecturer</a>
+  <table class="table table-bordered">
+      <thead>
+          <tr>
+              <th>Id</th>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>DepartmanId</th>
+          </tr>
+      </thead>
+      <tbody>
+          @foreach (var lecturer in Model)
+          {
+          <tr>
+              <td>@lecturer.Id</td>
+              <td>@lecturer.FirstName</td>
+              <td>@lecturer.LastName</td>
+              <td>@lecturer.Email</td>
+              <td>@lecturer.Age</td>
+              <td>@lecturer.Departmans.DepartmanName</td>
+          </tr>
+
+          }
+      </tbody>
+  </table>

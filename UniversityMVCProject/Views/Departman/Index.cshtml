@@ -1,0 +1,31 @@
+﻿@using UniversityMVCProject.Models.EntityFramework
+@model List<Departmans>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a class="btn btn-success" href="/Departman/Yeni">NewDepartman</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>DepartmanName</th>
+            <th>Address</th>
+            <th>Telephone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var departman in Model)
+        {
+            <tr>
+                <td>@departman.Id</td>
+                <td>@departman.DepartmanName</td>
+                <td>@departman.Address</td>
+                <td>@departman.Telephone</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
