@@ -1,0 +1,41 @@
+﻿@model List<UniversityMVCProject.Models.EntityFramework.Notes>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a class="btn btn-success" href="/Note/Yeni">NewNote</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>LessonId</th>
+            <th>StudentId</th>        
+            <th>Vize</th>
+            <th>Final</th>
+            <th>Average</th>
+            <th>Status</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var note in Model)
+        {
+        <tr>
+            <td>@note.Id</td>
+            <td>@note.Lessons.LessonName</td>
+            <td>@note.Students.FirstName </td>
+            <td>@note.Vize</td>
+            <td>@note.Final</td>
+            <td>@note.Average</td>
+            <td>@note.Status</td>
+
+        </tr>
+
+        }
+    </tbody>
+</table>
+
+
+
+

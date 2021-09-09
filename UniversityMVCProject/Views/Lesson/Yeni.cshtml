@@ -1,0 +1,37 @@
+﻿@model UniversityMVCProject.ViewModel.LessonViewModels
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Kaydet", "Lesson", FormMethod.Post))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Lessons.LessonName )
+        @Html.TextBoxFor(m => m.Lessons.LessonName)
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Lessons.StudentId)
+
+        @Html.DropDownListFor(m => m.Lessons.StudentId, new SelectList(Model.Students, "Id", "FirstName"))
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Lessons.Credit)
+        @Html.TextBoxFor(m => m.Lessons.Credit)
+
+    </div>
+      <div class="form-group">
+        @Html.LabelFor(m => m.Lessons.LecturerId)
+        @Html.DropDownListFor(m => m.Lessons.LecturerId, new SelectList(Model.Lecturers, "Id", "FirstName"))
+
+    </div>
+    <button type="submit" class="btn btn-success">Add</button>
+}
+
+
+
+
