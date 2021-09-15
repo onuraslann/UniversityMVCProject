@@ -11,7 +11,8 @@ namespace UniversityMVCProject.Models.EntityFramework
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Lessons
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,8 +23,10 @@ namespace UniversityMVCProject.Models.EntityFramework
     
         public int Id { get; set; }
         public string LessonName { get; set; }
+        [Display(Name ="StudentName")]
         public Nullable<int> StudentId { get; set; }
         public Nullable<int> Credit { get; set; }
+        [Display(Name = "LecturerName")]
         public Nullable<int> LecturerId { get; set; }
     
         public virtual Lecturers Lecturers { get; set; }

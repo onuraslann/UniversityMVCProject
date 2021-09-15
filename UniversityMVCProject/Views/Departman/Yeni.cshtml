@@ -13,18 +13,26 @@
 
         @Html.LabelFor(m => m.DepartmanName)
         @Html.TextBoxFor(m => m.DepartmanName)
+        @Html.ValidationMessageFor(m => m.DepartmanName)
     </div>
     <div class="form-group">
 
         @Html.LabelFor(m => m.Telephone)
         @Html.TextBoxFor(m => m.Telephone)
+        @Html.ValidationMessageFor(m => m.Telephone)
     </div>
     <div class="form-group">
 
         @Html.LabelFor(m => m.Address)
         @Html.TextBoxFor(m => m.Address)
+        @Html.ValidationMessageFor(m => m.Address)
     </div>
-    @Html.HiddenFor(m=>m.Id)
+    @Html.HiddenFor(m => m.Id)
     <button type="submit" class="btn btn-success">Add</button>
 }
+@section Scripts{
 
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -5,37 +5,42 @@
     ViewBag.Title = "Yeni";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@Html.ValidationSummary()
 @using (Html.BeginForm("Kaydet", "Student", FormMethod.Post))
 {
 
     <div class="form-group">
         @Html.LabelFor(m => m.Students.FirstName)
         @Html.TextBoxFor(m => m.Students.FirstName)
+        @Html.ValidationMessageFor(m => m.Students.FirstName)
 
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Students.LastName)
         @Html.TextBoxFor(m => m.Students.LastName)
+        @Html.ValidationMessageFor(m => m.Students.LastName)
 
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Students.StudentNo)
         @Html.TextBoxFor(m => m.Students.StudentNo)
+        @Html.ValidationMessageFor(m => m.Students.StudentNo)
 
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Students.Age)
         @Html.TextBoxFor(m => m.Students.Age)
+        @Html.ValidationMessageFor(m => m.Students.Age)
 
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Students.DepartmanId)
         @Html.DropDownListFor(m => m.Students.DepartmanId, new SelectList(Model.Departmans, "Id", "DepartmanName"))
+        @Html.ValidationMessageFor(m => m.Students.DepartmanId)
 
     </div>
-    @Html.HiddenFor(m=>m.Students.Id)
+    @Html.HiddenFor(m => m.Students.Id)
     <button type="submit" class="btn btn-success">Add</button>
 }
 

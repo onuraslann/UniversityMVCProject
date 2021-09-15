@@ -11,7 +11,8 @@ namespace UniversityMVCProject.Models.EntityFramework
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Departmans
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,8 +23,11 @@ namespace UniversityMVCProject.Models.EntityFramework
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage ="Departman Adý zorunlu")]
         public string DepartmanName { get; set; }
+        [Required(ErrorMessage = "Adress Adý zorunlu")]
         public string Address { get; set; }
+        [Required(ErrorMessage = "Telefon numarasý zorunlu")]
         public Nullable<long> Telephone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

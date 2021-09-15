@@ -18,10 +18,14 @@ namespace UniversityMVCProject.Controllers
         public ActionResult Yeni()
         {
 
-            return View("Yeni");
+            return View("Yeni", new Departmans());
         }
         public ActionResult Kaydet(Departmans departmans)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("Yeni");
+            }
             if (departmans.Id == 0)
             {
                 db.Departmans.Add(departmans);

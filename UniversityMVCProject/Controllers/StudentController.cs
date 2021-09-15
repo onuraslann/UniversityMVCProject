@@ -20,7 +20,8 @@ namespace UniversityMVCProject.Controllers
         {
             var model = new StudentViewModels
             { 
-                Departmans=db.Departmans.ToList()
+                Departmans=db.Departmans.ToList(),
+                Students=new Students()
 
 
             };
@@ -29,6 +30,18 @@ namespace UniversityMVCProject.Controllers
         }
         public ActionResult Kaydet(Students students)
         {
+            if (!ModelState.IsValid)
+            {
+                var model = new StudentViewModels
+                {
+                    Departmans = db.Departmans.ToList(),
+                    Students = students,
+                    
+                    
+
+                }; 
+                return View("Yeni", model);
+            }
             if (students.Id == 0)
             {
                 db.Students.Add(students);
