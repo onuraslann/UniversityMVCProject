@@ -21,12 +21,22 @@ namespace UniversityMVCProject.Controllers
         {
             var model = new LecturerViewModels()
             {
-                Departmans = db.Departmans.ToList()
+                Departmans = db.Departmans.ToList(),
+                 Lecturers=new Lecturers()
         };
             return View("Yeni", model);
         }
         public ActionResult Kaydet(Lecturers lecturers)
         {
+            if (!ModelState.IsValid)
+            {
+                var model = new LecturerViewModels()
+                {
+                    Departmans = db.Departmans.ToList(),
+                    Lecturers = lecturers
+                };
+                return View("Yeni", model);
+            }
             if (lecturers.Id == 0)
             {
                 db.Lecturers.Add(lecturers);

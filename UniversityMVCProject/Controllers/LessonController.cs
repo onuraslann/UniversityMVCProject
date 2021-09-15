@@ -21,12 +21,24 @@ namespace UniversityMVCProject.Controllers
             var model = new LessonViewModels()
             {
                   Lecturers=db.Lecturers.ToList(),
-                  Students = db.Students.ToList()
+                  Students = db.Students.ToList(),
+                  Lessons = new Lessons()
             };
             return View("Yeni", model);
         }
         public ActionResult Kaydet(Lessons lessons)
         {
+            if (!ModelState.IsValid)
+            {
+                var model = new LessonViewModels()
+                {
+                    Lecturers = db.Lecturers.ToList(),
+                    Students = db.Students.ToList(),
+                    Lessons=lessons
+                    
+                };
+                return View("Yeni", model);
+            }
             if (lessons.Id == 0)
             {
                 db.Lessons.Add(lessons);

@@ -7,36 +7,42 @@
 @using (Html.BeginForm("Kaydet", "Note", FormMethod.Post))
 {
 
-    <div class="form-group">
+    <div class="form-group" style=" font-style: italic ">
         @Html.LabelFor(m => m.Notes.LessonId)
         @Html.DropDownListFor(m => m.Notes.LessonId, new SelectList(Model.Lessons, "Id", "LessonName"))
+        @Html.ValidationMessageFor(m=>m.Notes.LessonId)
 
     </div>
-    <div class="form-group">
+    <div class="form-group" style=" font-style: italic ">
         @Html.LabelFor(m => m.Notes.StudentId)
 
         @Html.DropDownListFor(m => m.Notes.StudentId, new SelectList(Model.Students, "Id", "FirstName"))
+        @Html.ValidationMessageFor(m => m.Notes.StudentId)
     </div>
 
 
-    <div class="form-group">
+    <div class="form-group" style=" font-style: italic ">
         @Html.LabelFor(m => m.Notes.Vize)
         @Html.TextBoxFor(m => m.Notes.Vize)
+        @Html.ValidationMessageFor(m => m.Notes.Vize)
 
     </div>
-    <div class="form-group">
+    <div class="form-group" style=" font-style: italic ">
         @Html.LabelFor(m => m.Notes.Final)
         @Html.TextBoxFor(m => m.Notes.Final)
+        @Html.ValidationMessageFor(m => m.Notes.Final)
 
     </div>
-    <div class="form-group">
+    <div class="form-group" style=" font-style: italic ">
         @Html.LabelFor(m => m.Notes.Average)
         @Html.TextBoxFor(m => m.Notes.Average)
+        @Html.ValidationMessageFor(m => m.Notes.Average)
 
     </div>
-    <div class="form-group">
+    <div class="form-group" style=" font-style: italic ">
         @Html.LabelFor(m => m.Notes.Status)
         @Html.TextBoxFor(m => m.Notes.Status)
+        @Html.ValidationMessageFor(m => m.Notes.Status)
 
     </div>
     @Html.HiddenFor(m=>m.Notes.Id)

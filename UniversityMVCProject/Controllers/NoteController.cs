@@ -20,13 +20,25 @@ namespace UniversityMVCProject.Controllers
         {
             var model = new NoteViewModels()
             {
-                 Lessons=db.Lessons.ToList(),
-                 Students = db.Students.ToList()
+                Lessons = db.Lessons.ToList(),
+                Students = db.Students.ToList(),
+                Notes = new Notes()
             };
             return View("Yeni", model);
         }
         public ActionResult Kaydet(Notes notes)
         {
+            if (!ModelState.IsValid)
+            {
+                var model = new NoteViewModels()
+                {
+                    Lessons = db.Lessons.ToList(),
+                    Students = db.Students.ToList(),
+                    Notes=notes
+                };
+                return View("Yeni", model);
+            }
+
             if (notes.Id == 0)
             {
                 db.Notes.Add(notes);

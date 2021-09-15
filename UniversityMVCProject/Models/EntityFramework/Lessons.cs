@@ -22,11 +22,15 @@ namespace UniversityMVCProject.Models.EntityFramework
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage = "LessonName alanýný girmek zorunlu")]
         public string LessonName { get; set; }
         [Display(Name ="StudentName")]
+        [Required(ErrorMessage ="StudentName alanýný girmek zorunlu")]
         public Nullable<int> StudentId { get; set; }
+        [Required(ErrorMessage = "Credit alanýný girmek zorunlu")]
         public Nullable<int> Credit { get; set; }
         [Display(Name = "LecturerName")]
+        [Required(ErrorMessage = "LecturerId alanýný girmek zorunlu")]
         public Nullable<int> LecturerId { get; set; }
     
         public virtual Lecturers Lecturers { get; set; }

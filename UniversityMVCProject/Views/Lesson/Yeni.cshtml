@@ -10,23 +10,27 @@
     <div class="form-group">
         @Html.LabelFor(m =>m.Lessons.LessonName )
         @Html.TextBoxFor(m => m.Lessons.LessonName)
+        @Html.ValidationMessageFor(m=>m.Lessons.LessonName)
 
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Lessons.StudentId)
 
         @Html.DropDownListFor(m => m.Lessons.StudentId, new SelectList(Model.Students, "Id", "FirstName"))
+        @Html.ValidationMessageFor(m => m.Lessons.StudentId)
     </div>
 
 
     <div class="form-group">
         @Html.LabelFor(m => m.Lessons.Credit)
         @Html.TextBoxFor(m => m.Lessons.Credit)
+        @Html.ValidationMessageFor(m => m.Lessons.Credit)
 
     </div>
-      <div class="form-group">
+    <div class="form-group">
         @Html.LabelFor(m => m.Lessons.LecturerId)
         @Html.DropDownListFor(m => m.Lessons.LecturerId, new SelectList(Model.Lecturers, "Id", "FirstName"))
+        @Html.ValidationMessageFor(m => m.Lessons.LecturerId)
 
     </div>
     @Html.HiddenFor(m=>m.Lessons.Id)
