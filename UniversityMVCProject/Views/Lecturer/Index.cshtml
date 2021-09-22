@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <a class="btn btn-success" href="/Lecturer/Yeni">NewLecturer</a>
-  <table class="table table-bordered" style="background-color:magenta">
+  <table class="table table-bordered" style="background-color:darkgrey" id="tblLecturers">
       <thead>
           <tr>
               <th>Id</th>
@@ -28,7 +28,7 @@
               <td>@lecturer.Age</td>
               <td>@lecturer.Departmans.DepartmanName</td>
               <td><a class="btn btn-primary" href="/Lecturer/Update/@lecturer.Id">Update</a></td>
-              <td><a class="btn btn-warning" href="/Lecturer/Delete/@lecturer.Id">Delete</a></td>
+              <td><a class="btn btn-warning btnLecturerDelete" data-id="@lecturer.Id">Delete</a></td>
           </tr>
 
           }

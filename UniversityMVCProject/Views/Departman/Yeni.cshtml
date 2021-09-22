@@ -4,11 +4,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.AntiForgeryToken()
+
 @using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post))
 {
 
-
+    @Html.AntiForgeryToken()
     <div class="form-group" style="font-size:large">
 
         @Html.LabelFor(m => m.DepartmanName)

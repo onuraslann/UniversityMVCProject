@@ -5,7 +5,7 @@
 }
 
 <a class="btn btn-success" href="/Student/Yeni">NewStudent</a>
-<table class="table table-bordered">
+<table class="table table-bordered" id="tblStudent">
     <thead>
         <tr>
             <th>Id</th>
@@ -29,7 +29,7 @@
             <td>@student.Age</td>
             <td>@student.Departmans.DepartmanName</td>
             <td><a class="btn btn-primary" href="/Student/Update/@student.Id">Update</a></td>
-            <td><a class="btn btn-warning" href="/Student/Delete/@student.Id">Delete</a></td>
+            <td><a class="btn btn-warning btnStudentDelete" data-id="@student.Id" >Delete</a></td>
         </tr>
 
         }

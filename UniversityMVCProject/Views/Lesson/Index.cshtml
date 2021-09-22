@@ -5,7 +5,7 @@
 }
 
 <a class="btn btn-success" href="/Lesson/Yeni">NewLesson</a>
-<table class="table table-bordered" style="background-color:magenta">
+<table class="table table-bordered" style="background-color:darkgrey" id="tblLesson">
     <thead>
         <tr>
             <th>Id</th>
@@ -28,7 +28,7 @@
             <td>@lessons.Credit</td>
             <td>@lessons.Lecturers.FirstName</td>
             <td><a class="btn btn-primary" href="/Lesson/Update/@lessons.Id">Update</a></td>
-            <td><a class="btn btn-warning" href="/Lesson/Delete/@lessons.Id">Delete</a></td>
+            <td><a class="btn btn-warning btnLessonDelete">Delete</a></td>
 
         </tr>
 
