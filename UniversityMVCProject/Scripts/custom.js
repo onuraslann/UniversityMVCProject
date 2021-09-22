@@ -1,5 +1,5 @@
 ﻿$(function () {
-   
+    $("#tblDepartmanlar").DataTable();
     $("#tblDepartmanlar").on("click", ".btnDepartmanDelete", function () {
         var btn = $(this);
         bootbox.confirm("Departmanı silmek istediğinize eminmisiniz ? ", function (result) {
@@ -24,7 +24,7 @@
 
 });
 $(function () {
-
+    $("#tblLecturers").DataTable();
     $("#tblLecturers").on("click", ".btnLecturerDelete", function () {
         var btn = $(this);
         bootbox.confirm("Öğretim üyesini silmek istediğinize eminmisiniz ? ", function (result) {
@@ -49,7 +49,7 @@ $(function () {
 
 });
 $(function () {
-
+    $("tblLesson").DataTable();
     $("tblLesson").on("click", ".btnLessonDelete", function () {
         var btn = $(this);
         bootbox.confirm("Dersi silmek istediğinize eminmisiniz ? ", function (result) {
@@ -74,7 +74,7 @@ $(function () {
 
 });
 $(function () {
-
+    $("#tblNotes").DataTable();
     $("#tblNotes").on("click", ".btnNoteDelete", function () {
         var btn = $(this);
         bootbox.confirm("Dersi silmek istediğinize eminmisiniz ? ", function (result) {
@@ -99,7 +99,7 @@ $(function () {
 
 });
 $(function () {
-
+    $("#tblStudent").DataTable();
     $("#tblStudent").on("click", ".btnStudentDelete", function () {
         var btn = $(this);
         bootbox.confirm("Dersi silmek istediğinize eminmisiniz ? ", function (result) {
