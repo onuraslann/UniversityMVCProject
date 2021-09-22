@@ -5,6 +5,7 @@
     ViewBag.Title = "Yeni";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@Html.AntiForgeryToken()
 @Html.ValidationSummary()
 @using (Html.BeginForm("Kaydet", "Student", FormMethod.Post))
 {

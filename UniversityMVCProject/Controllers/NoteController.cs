@@ -26,6 +26,7 @@ namespace UniversityMVCProject.Controllers
             };
             return View("Yeni", model);
         }
+        [ValidateAntiForgeryToken]
         public ActionResult Kaydet(Notes notes)
         {
             if (!ModelState.IsValid)

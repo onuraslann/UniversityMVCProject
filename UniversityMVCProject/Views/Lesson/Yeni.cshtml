@@ -3,7 +3,7 @@
     ViewBag.Title = "Yeni";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@Html.AntiForgeryToken()
 @using (Html.BeginForm("Kaydet", "Lesson", FormMethod.Post))
 {
 
