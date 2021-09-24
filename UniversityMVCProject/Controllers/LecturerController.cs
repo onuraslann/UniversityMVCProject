@@ -8,6 +8,7 @@ using UniversityMVCProject.ViewModel;
 
 namespace UniversityMVCProject.Controllers
 {
+    [Authorize]
     public class LecturerController : Controller
     {
         UniversityEntities db = new UniversityEntities();

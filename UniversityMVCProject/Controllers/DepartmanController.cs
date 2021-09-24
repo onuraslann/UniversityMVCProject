@@ -7,9 +7,12 @@ using UniversityMVCProject.Models.EntityFramework;
 
 namespace UniversityMVCProject.Controllers
 {
+   
     public class DepartmanController : Controller
     {
         UniversityEntities db = new UniversityEntities();
+   
+        [Authorize]
         public ActionResult Index()
         {
             var model = db.Departmans.ToList();

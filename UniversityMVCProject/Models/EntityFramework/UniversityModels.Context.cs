@@ -30,5 +30,6 @@ namespace UniversityMVCProject.Models.EntityFramework
         public virtual DbSet<Lessons> Lessons { get; set; }
         public virtual DbSet<Notes> Notes { get; set; }
         public virtual DbSet<Students> Students { get; set; }
+        public virtual DbSet<Userss> Userss { get; set; }
     }
 }

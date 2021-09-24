@@ -12,17 +12,11 @@ namespace UniversityMVCProject.Models.EntityFramework
     using System;
     using System.Collections.Generic;
     
-    public partial class Notes
+    public partial class Userss
     {
         public int Id { get; set; }
-        public Nullable<int> LessonId { get; set; }
-        public Nullable<int> StudentId { get; set; }
-        public Nullable<int> Vize { get; set; }
-        public Nullable<int> Final { get; set; }
-        public Nullable<double> Average { get; set; }
-        public Nullable<bool> Status { get; set; }
-    
-        public virtual Lessons Lessons { get; set; }
-        public virtual Students Students { get; set; }
+        public string Name { get; set; }
+        public string Password { get; set; }
+        public string Role { get; set; }
     }
 }
