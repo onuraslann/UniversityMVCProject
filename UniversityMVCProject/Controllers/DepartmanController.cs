@@ -12,7 +12,7 @@ namespace UniversityMVCProject.Controllers
     {
         UniversityEntities db = new UniversityEntities();
    
-        [Authorize]
+        
         public ActionResult Index()
         {
             var model = db.Departmans.ToList();
