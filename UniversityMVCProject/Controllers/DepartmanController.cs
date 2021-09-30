@@ -7,6 +7,7 @@ using UniversityMVCProject.Models.EntityFramework;
 
 namespace UniversityMVCProject.Controllers
 {
+    [Authorize(Roles ="atolla")]
    
     public class DepartmanController : Controller
     {

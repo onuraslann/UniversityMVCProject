@@ -11,14 +11,22 @@ namespace UniversityMVCProject.Models.EntityFramework
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Notes
     {
         public int Id { get; set; }
+        [Display(Name = "LessonName")]
+        [Required(ErrorMessage = "LessonName boþ geçilemez")]
         public Nullable<int> LessonId { get; set; }
+        [Display(Name = "StudentName")]
+        [Required(ErrorMessage = "StudentName boþ geçilemez")]
         public Nullable<int> StudentId { get; set; }
+        [Required(ErrorMessage = "Vize boþ geçilemez")]
         public Nullable<int> Vize { get; set; }
+        [Required(ErrorMessage = "Final boþ geçilemez")]
         public Nullable<int> Final { get; set; }
+        [Required(ErrorMessage = "Average boþ geçilemez")]
         public Nullable<double> Average { get; set; }
         public Nullable<bool> Status { get; set; }
     

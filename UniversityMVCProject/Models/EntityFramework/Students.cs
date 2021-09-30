@@ -11,7 +11,8 @@ namespace UniversityMVCProject.Models.EntityFramework
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Students
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,10 +23,17 @@ namespace UniversityMVCProject.Models.EntityFramework
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage = "FirstName boþ geçilemez")]
         public string FirstName { get; set; }
+        [Required(ErrorMessage = "LastName boþ geçilemez")]
         public string LastName { get; set; }
+        [Required(ErrorMessage = "StudentNo boþ geçilemez")]
         public string StudentNo { get; set; }
+        [Display(Name ="DepartmanName")]
+        [Required(ErrorMessage = "DepartmanName boþ geçilemez")]
         public Nullable<int> DepartmanId { get; set; }
+        [Required(ErrorMessage = "Vize boþ geçilemez")]
+       [Range(18,34)]
         public Nullable<int> Age { get; set; }
     
         public virtual Departmans Departmans { get; set; }

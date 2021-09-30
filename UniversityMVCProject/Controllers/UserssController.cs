@@ -10,6 +10,7 @@ using UniversityMVCProject.Models.EntityFramework;
 
 namespace UniversityMVCProject.Controllers
 {
+    [Authorize(Roles = "atolla")]
     public class UserssController : Controller
     {
         private UniversityEntities db = new UniversityEntities();

@@ -8,7 +8,7 @@ using UniversityMVCProject.ViewModel;
 
 namespace UniversityMVCProject.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "atolla")]
     public class LecturerController : Controller
     {
         UniversityEntities db = new UniversityEntities();
